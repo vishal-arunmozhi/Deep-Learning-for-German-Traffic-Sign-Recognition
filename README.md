@@ -1,1 +1,6 @@
-# Deep-Learning-for-German-Traffic-Sign-Recognition
+## Deep Learning for German Traffic Sign Recognition
+- This image classification project focused on the [German Traffic Sign Recognition Benchmark](http://benchmark.ini.rub.de/?section=gtsrb&subsection=news) (GTSRB) dataset, which contains about 27,000 images of 43 different kinds of road signs.
+- Initially OpenCV was used to pre-process the images. Then the number of training images available for each class was checked and data augmentation was performed for classes that had less training data. ImageDataGenerator from Keras was used to perform data augmentations.
+- Extensive hypertuning was done to identify the optimal model architecture. The neural network architecture was reasonably deep and He Normal weight initialization helped avoid the vanishing gradients problem.
+- It was also observed that the right architecture gave impressive results even without batch normalization. The T4 GPU from Google Colab was used to train the model for 20 epochs and additionally, learning rate scheduling was also implemented to halve the learning rate after 10 epochs.
+- The model was able to achieve a remarkable peak validation accuracy of 99.87% and a  test accuracy of 99.6%. To ensure uniform performance across all the classes, class-wise accuracies were computed. The results demonstrated exceptional performance across all classes, with the model even achieving a perfect 100% accuracy for more than half of the classes in the test data.
